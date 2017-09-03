@@ -4,6 +4,7 @@ const app = express()
 
 app.use(bodyParser.json())
 
+//วิธีกำหนด routing หรือ API endpoint
 app.get('/', function (req, res) {
   res.send('API Started')
 })
