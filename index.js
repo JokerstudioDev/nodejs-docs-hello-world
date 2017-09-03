@@ -1,13 +1,16 @@
-var http = require('http');
+const express = require('express')
+var bodyParser = require('body-parser')
+const app = express()
+var data = require('./data')
 
-var server = http.createServer(function(request, response) {
+app.use(bodyParser.json())
 
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World!");
-
-});
+//วิธีกำหนด routing หรือ API endpoint
+app.get('/', function (req, res) {
+  res.send('API Started')
+})
 
 var port = process.env.PORT || 1337;
-server.listen(port);
-
-console.log("Server running at http://localhost:%d", port);
+app.listen(port, function () {
+  console.log('Example app listening on port 3000!')
+})
