@@ -1,7 +1,6 @@
 const express = require('express')
 var bodyParser = require('body-parser')
 const app = express()
-var data = require('./data')
 
 app.get('/', function (req, res) {
   res.send('API Started')
